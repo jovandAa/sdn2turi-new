@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri - SDN Turi 2 Blitar</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+            background: #fff;
+            cursor: pointer;
+            transition: transform 0.25s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-4px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item p {
+            padding: 12px 14px;
+            font-weight: 600;
+            color: #334;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.82);
+            justify-content: center;
+            align-items: center;
+            z-index: 4000;
+            padding: 24px;
+        }
+
+        .lightbox.show {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: min(1000px, 95vw);
+            max-height: 82vh;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+        }
+
+        .lightbox button {
+            position: absolute;
+            top: 14px;
+            right: 20px;
+            border: none;
+            background: transparent;
+            color: #fff;
+            font-size: 2.2rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <img src="img/logo-sd.png" alt="Logo SDN Turi 2" style="height: 50px; width: auto;">
+                    <h1 style="margin: 0; font-size: 1.5rem; line-height: 1;">SDN Turi 2 Blitar</h1>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Profil</a>
+                        <div class="dropdown-content">
+                            <a href="profil.html">Profil Sekolah</a>
+                            <a href="tentang.html">Tentang Kami</a>
+                            <a href="tenaga-kependidikan.html">Guru & Staf</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Fasilitas</a>
+                        <div class="dropdown-content">
+                            <a href="prasarana.html">Prasarana</a>
+                            <a href="perpustakaan.html">Perpustakaan</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Informasi</a>
+                        <div class="dropdown-content">
+                            <a href="galeri.html">Galeri</a>
+                            <a href="kegiatan.html">Kegiatan</a>
+                            <a href="syarat-ppdb.html">PPDB</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Kontak</a>
+                        <div class="dropdown-content">
+                            <a href="kontak.html">Hubungi Kami</a>
+                            <a href="alamat.html">Alamat</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h2>Galeri Sekolah</h2>
+        <p>Dokumentasi kegiatan, fasilitas, dan momen siswa</p>
+    </section>
+
+    <section class="container">
+        <h2 class="section-title">Dokumentasi Terbaru</h2>
+        <div class="gallery-grid">
+            <article class="gallery-item"><img src="img/upacara.jpg" alt="Upacara"><p>Upacara Bendera</p></article>
+            <article class="gallery-item"><img src="img/seni-lukis.jpg" alt="Seni lukis"><p>Kelas Seni Lukis</p></article>
+            <article class="gallery-item"><img src="img/pramuka1.jpg" alt="Pramuka"><p>Kegiatan Pramuka</p></article>
+            <article class="gallery-item"><img src="img/lapangan.jpeg" alt="Lapangan"><p>Lapangan Olahraga</p></article>
+            <article class="gallery-item"><img src="img/prestasi1.jpg" alt="Prestasi"><p>Prestasi Siswa</p></article>
+            <article class="gallery-item"><img src="img/senam.jpg" alt="Senam pagi"><p>Senam Pagi</p></article>
+        </div>
+    </section>
+
+    <div class="lightbox" id="lightbox">
+        <button type="button" id="lightboxClose" aria-label="Tutup">Ã—</button>
+        <img id="lightboxImage" src="" alt="">
+    </div>
+
+    <footer>
+         <p>&copy; 2026 SDN Turi 2 Blitar.</p>
+        <p>Kec. Sukorejo, Kota Blitar, Jawa Timur</p>
+    </footer>
+
+    <script>
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImage = document.getElementById("lightboxImage");
+        const closeButton = document.getElementById("lightboxClose");
+
+        document.querySelectorAll(".gallery-item img").forEach((img) => {
+            img.addEventListener("click", () => {
+                lightboxImage.src = img.src;
+                lightboxImage.alt = img.alt;
+                lightbox.classList.add("show");
+                document.body.style.overflow = "hidden";
+            });
+        });
+
+        function closeLightbox() {
+            lightbox.classList.remove("show");
+            document.body.style.overflow = "";
+        }
+
+        closeButton.addEventListener("click", closeLightbox);
+        lightbox.addEventListener("click", (event) => {
+            if (event.target === lightbox) {
+                closeLightbox();
+            }
+        });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+

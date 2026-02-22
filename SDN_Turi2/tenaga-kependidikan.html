@@ -1,0 +1,213 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenaga Kependidikan - SDN Turi 2</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <img src="img/logo-sd.png" alt="Logo SDN Turi 2" style="height: 50px; width: auto;">
+                    <h1 style="margin: 0; font-size: 1.5rem; line-height: 1;">SDN Turi 2 Blitar</h1>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Profil</a>
+                        <div class="dropdown-content">
+                            <a href="profil.html">Profil Sekolah</a>
+                            <a href="tentang.html">Tentang Kami</a>
+                            <a href="tenaga-kependidikan.html">Guru & Staf</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Fasilitas</a>
+                        <div class="dropdown-content">
+                            <a href="prasarana.html">Prasarana</a>
+                            <a href="perpustakaan.html">Perpustakaan</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Informasi</a>
+                        <div class="dropdown-content">
+                            <a href="galeri.html">Galeri</a>
+                            <a href="kegiatan.html">Kegiatan</a>
+                            <a href="syarat-ppdb.html">PPDB</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Kontak</a>
+                        <div class="dropdown-content">
+                            <a href="kontak.html">Hubungi Kami</a>
+                            <a href="alamat.html">Alamat</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h2>Guru & Staf</h2>
+        <p>Tim Profesional SDN Turi 2</p>
+    </section>
+
+    <section class="container">
+        <h2 class="section-title">Kepala Sekolah</h2>
+        <div style="text-align: center; margin-bottom: 50px;">
+            <div class="feature-card" style="max-width: 400px; margin: 0 auto; border-top: 5px solid #f1c40f; position: relative;">
+                <div style="position: absolute; top: -15px; right: -10px; background: #f1c40f; color: #fff; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">👑 Pimpinan</div>
+                
+                <div class="feature-icon">👨‍🏫</div>
+                <h3>ASY'ARI S.Pd.SD</h3>
+                <p>Kepala Sekolah</p>
+            </div>
+        </div>
+        
+        <h2 class="section-title">Guru Kelas</h2>
+        <div class="features">
+            <div class="feature-card"><div class="feature-icon">👨‍🏫</div><h3>Guru Kelas 1</h3></div>
+            <div class="feature-card"><div class="feature-icon">👩‍🏫</div><h3>Guru Kelas 2</h3></div>
+            <div class="feature-card"><div class="feature-icon">👨‍🏫</div><h3>Guru Kelas 3</h3></div>
+            <div class="feature-card"><div class="feature-icon">👩‍🏫</div><h3>Guru Kelas 4</h3></div>
+            <div class="feature-card"><div class="feature-icon">👨‍🏫</div><h3>Guru Kelas 5</h3></div>
+            <div class="feature-card"><div class="feature-icon">👩‍🏫</div><h3>Guru Kelas 6</h3></div>
+        </div>
+        <h2 class="section-title">Tenaga Kependidikan (Staf)</h2>
+        <div class="features staff-section">
+            <div class="feature-card">
+                <div class="feature-icon">💼</div>
+                <h3>Tenaga Administrasi</h3>
+                <p>Tata Usaha</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📚</div>
+                <h3>Pustakawan</h3>
+                <p>Pengelola Perpustakaan</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3>Penjaga Sekolah</h3>
+                <p>Keamanan & Kebersihan</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌳</div>
+                <h3>Petugas Kebun</h3>
+                <p>Pemeliharaan Lingkungan</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 SDN Turi 2 Blitar.</p>
+        <p>Kec. Sukorejo, Kota Blitar, Jawa Timur</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // ==========================================
+            // 1. DATA WARNA (Hanya butuh warna saja sekarang)
+            // ==========================================
+            const classColors = [
+                "#FF6B6B", // Kelas 1
+                "#4ECDC4", // Kelas 2
+                "#45B7D1", // Kelas 3
+                "#96CEB4", // Kelas 4
+                "#FFEEAD", // Kelas 5
+                "#D4A5A5"  // Kelas 6
+            ];
+
+            // ==========================================
+            // 2. INJECT TAMPILAN KARTU (SIMPLE)
+            // ==========================================
+            const teacherCards = document.querySelectorAll('.features .feature-card');
+            
+            teacherCards.forEach((card, index) => {
+                // Pastikan ada datanya
+                if(classColors[index]) {
+                    
+                    // --- A. UBAH ICON JADI ANGKA KELAS ---
+                    const iconDiv = card.querySelector('.feature-icon');
+                    const titleText = card.querySelector('h3').innerText; // Ambil teks "Guru Kelas X"
+                    const classNum = titleText.slice(-1); // Ambil angka paling belakang
+                    
+                    iconDiv.innerText = classNum;
+                    Object.assign(iconDiv.style, {
+                        background: classColors[index],
+                        color: 'white',
+                        width: '80px',
+                        height: '80px',
+                        lineHeight: '80px',
+                        borderRadius: '50%',
+                        margin: '0 auto 20px auto',
+                        fontSize: '2.5rem',
+                        fontWeight: 'bold',
+                        boxShadow: '0 5px 15px rgba(0,0,0,0.1)'
+                    });
+
+                    // --- B. RAPIKAN JUDUL ---
+                    const title = card.querySelector('h3');
+                    title.style.color = "#333";
+                    title.style.fontSize = "1.2rem";
+                    title.style.margin = "0"; // Reset margin agar pas di tengah
+                    
+                    // Tidak ada penambahan div NIP atau Tombol.
+                    // Tampilan bersih: Angka + Judul Kelas.
+                }
+            });
+
+            // ==========================================
+            // 3. EFEK VISUAL (NAV & ANIMASI)
+            // ==========================================
+            const header = document.querySelector('header');
+            
+            // Nav Active State
+            document.querySelectorAll('nav ul li a').forEach(link => {
+                if(link.href.includes('tenaga-kependidikan.html')) {
+                    link.style.color = "#667eea";
+                    link.style.borderBottom = "2px solid #667eea";
+                }
+            });
+
+            // Glass Header Effect
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.style.background = "rgba(255, 255, 255, 0.95)";
+                    header.style.boxShadow = "0 4px 30px rgba(0, 0, 0, 0.1)";
+                    header.style.backdropFilter = "blur(5px)";
+                } else {
+                    header.style.background = "#ffffff";
+                    header.style.boxShadow = "0 2px 10px rgba(0,0,0,0.1)";
+                }
+            });
+
+            // Animation Fade In
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = "1";
+                        entry.target.style.transform = "translateY(0)";
+                    }
+                });
+            });
+
+            const animTargets = document.querySelectorAll('.feature-card');
+            animTargets.forEach((el, i) => {
+                el.style.opacity = "0";
+                el.style.transform = "translateY(40px)";
+                el.style.transition = `all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) ${i * 0.1}s`; 
+                observer.observe(el);
+            });
+
+        });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+

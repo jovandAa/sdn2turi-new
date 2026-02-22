@@ -1,0 +1,418 @@
+/* ========================================
+   ADDITIONAL STYLES FOR SPECIFIC PAGES
+   ======================================== */
+
+/* --- PROFILE PAGE SPECIFIC --- */
+.profile-layout {
+    display: grid;
+    grid-template-columns: 1.7fr 1fr;
+    gap: 2rem;
+}
+
+.profile-card {
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+    padding: 2rem;
+    transition: var(--transition);
+}
+
+.profile-card:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+.profile-card p {
+    color: var(--gray);
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.identity-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.identity-table td {
+    border-bottom: 1px solid #eceff4;
+    padding: 1rem 0.5rem;
+    vertical-align: top;
+}
+
+.identity-table td:first-child {
+    width: 38%;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.profile-photo {
+    width: 100%;
+    max-width: 280px;
+    border-radius: 16px;
+    display: block;
+    margin: 0 auto 1rem;
+    box-shadow: var(--shadow-md);
+}
+
+/* --- GALLERY PAGE SPECIFIC --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    background: var(--white);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.gallery-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-item p {
+    padding: 1rem;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 4000;
+    padding: 2rem;
+}
+
+.lightbox.show {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: min(1000px, 95vw);
+    max-height: 85vh;
+    border-radius: 12px;
+    box-shadow: var(--shadow-xl);
+}
+
+.lightbox button {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    border: none;
+    background: transparent;
+    color: var(--white);
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.lightbox button:hover {
+    transform: scale(1.2);
+}
+
+/* --- FACILITY PAGE SPECIFIC --- */
+.facility-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.facility-card {
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+}
+
+.facility-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.facility-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.facility-content {
+    padding: 1.5rem;
+}
+
+.facility-content h3 {
+    margin-bottom: 0.75rem;
+    color: var(--dark);
+    font-weight: 700;
+}
+
+.facility-content p {
+    color: var(--gray);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* --- PPDB PAGE SPECIFIC --- */
+.ppdb-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.ppdb-card {
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+    padding: 2rem;
+}
+
+.ppdb-card h3 {
+    margin-bottom: 1.5rem;
+    color: var(--dark);
+    font-weight: 700;
+}
+
+.check-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.check-list li {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px dashed #e3e8f0;
+    color: var(--gray);
+}
+
+.check-list li:last-child {
+    border-bottom: none;
+}
+
+.check-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #d4fc79, #96e6a1);
+    color: #155724;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.timeline-item {
+    border-left: 3px solid #cfd8ea;
+    padding: 0 0 1.5rem 1.5rem;
+    margin-left: 0.5rem;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    left: -9px;
+    top: 4px;
+}
+
+.timeline-item h4 {
+    margin-bottom: 0.5rem;
+    color: var(--dark);
+    font-weight: 700;
+}
+
+.timeline-item p {
+    color: var(--gray);
+    font-size: 0.95rem;
+}
+
+.cta-box {
+    margin-top: 2rem;
+    background: var(--white);
+    border: 2px dashed var(--primary);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.cta-box a {
+    display: inline-block;
+    margin: 0.5rem;
+    padding: 0.875rem 1.75rem;
+    border-radius: 50px;
+    font-weight: 700;
+    color: var(--white);
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-whatsapp {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+}
+
+.btn-whatsapp:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* --- SLIDER STYLES (for kegiatan.html) --- */
+.activity-icon {
+    width: 100%;
+    height: 250px;
+    margin-bottom: 1rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: #f9f9f9;
+}
+
+.slider-track {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    transition: transform 0.4s ease-in-out;
+}
+
+.slider-track img,
+.slider-track video {
+    width: 100%;
+    flex-shrink: 0;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    background: #000;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.slider-btn:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.activity-card:hover .slider-btn {
+    opacity: 1;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 768px) {
+    .profile-layout,
+    .ppdb-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .identity-table,
+    .identity-table tbody,
+    .identity-table tr,
+    .identity-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .identity-table td:first-child {
+        width: 100%;
+        padding-bottom: 0.5rem;
+    }
+
+    .gallery-grid,
+    .facility-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .activity-icon {
+        height: 220px;
+    }
+}
+
+/* --- ANIMATION UTILITIES --- */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.slide-in {
+    animation: slideIn 0.6s ease-out;
+}
+
+.bounce-in {
+    animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}

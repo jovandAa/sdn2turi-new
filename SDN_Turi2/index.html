@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDN Turi 2 Blitar - Beranda</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* =========================================
+           STYLE KHUSUS SAMBUTAN KEPALA SEKOLAH
+           ========================================= */
+        .welcome-section {
+            padding: 120px 20px 80px 20px; /* Padding atas lebih besar untuk ruang foto */
+            background-color: #f9fbfd; /* Background pembeda */
+            margin-top: 40px; /* Jarak dari section sebelumnya */
+        }
+
+        .welcome-card {
+            position: relative;
+            background: #ffffff;
+            max-width: 900px;
+            margin: 0 auto;
+            border: 2px solid #4cd6c6; /* Border Tosca */
+            border-radius: 20px;
+            padding: 90px 40px 40px 40px; 
+            box-shadow: 0 10px 30px rgba(76, 214, 198, 0.1);
+            text-align: left;
+        }
+
+        /* Wrapper Foto Kepala Sekolah */
+        .kepsek-img-wrapper {
+            position: absolute;
+            top: -75px; 
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 150px;
+            background: #fff;
+            border-radius: 50%;
+            padding: 5px;
+            border: 2px solid #4cd6c6;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            z-index: 10;
+        }
+
+        .kepsek-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #fff;
+        }
+
+        /* Icon Kutipan Background */
+        .welcome-text {
+            position: relative;
+            z-index: 1;
+            font-size: 1.05rem;
+            color: #4a5568;
+            line-height: 1.8;
+            /* Rata kanan-kiri yang dioptimasi */
+            text-align: justify;
+            text-justify: inter-word; 
+            hyphens: auto; /* Memotong kata panjang dengan tanda hubung jika perlu */
+        }
+
+        /* Perbaikan khusus untuk tampilan HP agar tidak ada celah kata yang aneh */
+        @media (max-width: 600px) {
+            .welcome-text {
+                font-size: 0.95rem; /* Sedikit lebih kecil agar muat lebih banyak kata per baris */
+                line-height: 1.6;
+                text-align: justify;
+                /* Opsional: Jika layar terlalu sempit ( < 350px), 
+                   terkadang rata kiri lebih aman, tapi kita coba tetap justify dulu */
+            }
+            
+            .welcome-card {
+                padding: 80px 20px 30px 20px;
+            }
+        }
+
+        .divider {
+            height: 1px;
+            background-color: #e2e8f0;
+            margin: 30px 0;
+            border: none;
+        }
+
+        .kepsek-identity h4 {
+            font-size: 1.2rem;
+            color: #2d3748;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .kepsek-identity p {
+            font-size: 0.95rem;
+            color: #718096;
+            margin: 0;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 600px) {
+            .welcome-card {
+                padding: 80px 20px 30px 20px;
+            }
+            .kepsek-img-wrapper {
+                width: 120px;
+                height: 120px;
+                top: -60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <img src="img/logo-sd.png" alt="Logo SDN Turi 2" style="height: 50px; width: auto;">
+                    <h1 style="margin: 0; font-size: 1.5rem; line-height: 1;">SDN Turi 2 Blitar</h1>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Profil</a>
+                        <div class="dropdown-content">
+                            <a href="profil.html">Profil Sekolah</a>
+                            <a href="tentang.html">Tentang Kami</a>
+                            <a href="tenaga-kependidikan.html">Guru & Staf</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Fasilitas</a>
+                        <div class="dropdown-content">
+                            <a href="prasarana.html">Prasarana</a>
+                            <a href="perpustakaan.html">Perpustakaan</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Informasi</a>
+                        <div class="dropdown-content">
+                            <a href="galeri.html">Galeri</a>
+                            <a href="kegiatan.html">Kegiatan</a>
+                            <a href="syarat-ppdb.html">PPDB</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Kontak</a>
+                        <div class="dropdown-content">
+                            <a href="kontak.html">Hubungi Kami</a>
+                            <a href="alamat.html">Alamat</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h2>Selamat Datang di SDN Turi 2 Blitar</h2>
+        <p>Membentuk Generasi Cerdas, Kreatif, dan Berakhlak Mulia</p>
+        <a href="tentang.html" class="btn">Pelajari Lebih Lanjut</a>
+    </section>
+
+    <section class="container" style="margin-bottom: 20px;">
+        <h2 class="section-title">Mengapa Memilih Kami?</h2>
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">👨‍🏫</div>
+                <h3>Guru Berkualitas</h3>
+                <p>Tenaga pengajar profesional dan berpengalaman.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📚</div>
+                <h3>Kurikulum Lengkap</h3>
+                <p>Kurikulum nasional dengan pengembangan karakter.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🏫</div>
+                <h3>Fasilitas Memadai</h3>
+                <p>Ruang kelas nyaman, perpustakaan, dan lab komputer.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3>Ekstrakurikuler</h3>
+                <p>Berbagai pilihan kegiatan bakat dan minat.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="welcome-section">
+        <div class="container">
+            <div class="welcome-card">
+                <div class="kepsek-img-wrapper">
+                    <img src="img/ASY'ARI.jpg" alt="Kepala Sekolah SDN Turi 2">
+                </div>
+
+                <div class="welcome-text">
+                    <p><strong>Assalamu'alaikum Warahmatullahi Wabarakatuh.</strong></p>
+                    
+                    <p>
+                        Website ini kami hadirkan sebagai sarana untuk memberikan informasi mengenai profil sekolah, program kerja, kegiatan siswa, prestasi, serta berbagai layanan pendidikan yang kami selenggarakan. Kami berharap melalui media ini, komunikasi antara sekolah, orang tua, dan masyarakat dapat terjalin dengan lebih efektif, transparan, dan terbuka.
+                    </p>
+                    <p>
+                        Sebagai lembaga pendidikan dasar, SDN Turi 2 Blitar berkomitmen untuk memberikan layanan pendidikan yang berkualitas, membentuk peserta didik yang berakhlak mulia, berprestasi, serta memiliki karakter yang kuat sesuai dengan nilai-nilai luhur bangsa. Kami terus berupaya menciptakan lingkungan belajar yang aman, nyaman, dan menyenangkan agar setiap siswa dapat berkembang secara optimal sesuai potensi yang dimilikinya.
+                    </p>
+                    <p>
+                        Kami menyampaikan terima kasih kepada seluruh guru, tenaga kependidikan, komite sekolah, orang tua/wali murid, serta semua pihak yang telah memberikan dukungan dan kontribusi dalam memajukan sekolah ini. Semoga kerja sama yang baik ini terus terjalin demi kemajuan pendidikan anak-anak kita
+                    </p>
+                    
+                    <p><strong>Wassalamu'alaikum Warahmatullahi Wabarakatuh.</strong></p>
+                </div>
+
+                <hr class="divider">
+
+                <div class="kepsek-identity">
+                    <h4>ASY'ARI S.Pd.SD</h4>
+                    <p>Kepala UPT SDN Turi 2 Blitar</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="activities" id="kegiatan">
+        <div class="container">
+            <h2 class="section-title">Sekilas Kegiatan</h2>
+            <div class="activity-grid">
+                <div class="activity-card"><div class="activity-icon">🎵</div><h4>Seni Musik</h4></div>
+                <div class="activity-card"><div class="activity-icon">🎨</div><h4>Seni Rupa</h4></div>
+                <div class="activity-card"><div class="activity-icon">🕌</div><h4>Keagamaan</h4></div>
+            </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="kegiatan.html" class="btn">Lihat Semua Kegiatan</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="kontak">
+        <h2 class="section-title">Hubungi Kami</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <div class="contact-icon">📍</div>
+                <h4>Alamat</h4>
+                <p>Jl. Turi, Kec. Sukorejo, Kota Blitar</p>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">📞</div>
+                <h4>Telepon</h4>
+                <p>(0342) 801138</p>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">✉️</div>
+                <h4>Email</h4>
+                <p>sdnturi2@gmail.com</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+         <p>&copy; 2026 SDN Turi 2 Blitar.</p>
+        <p>Kec. Sukorejo, Kota Blitar, Jawa Timur</p>
+    </footer>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>

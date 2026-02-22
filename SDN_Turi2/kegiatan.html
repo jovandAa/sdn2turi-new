@@ -1,0 +1,414 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kegiatan - SDN Turi 2</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* =========================================
+           CSS UPDATE: SLIDER CAMPURAN (FOTO & VIDEO)
+           ========================================= */
+        
+        .activity-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: center;
+            padding: 10px;
+            overflow: hidden;
+            position: relative; 
+        }
+
+        .activity-icon {
+            width: 100%;
+            height: 250px; 
+            margin-bottom: 15px;
+            position: relative;
+            overflow: hidden; 
+            border-radius: 10px;
+            background-color: #f9f9f9; 
+        }
+
+        .slider-track {
+            display: flex; 
+            height: 100%;
+            width: 100%;
+            transition: transform 0.4s ease-in-out; 
+        }
+
+        /* === UPDATE PENTING: Style berlaku untuk IMG dan VIDEO === */
+        .slider-track img, 
+        .slider-track video {
+            width: 100%;       /* Lebar 100% dari container */
+            flex-shrink: 0;    /* Jangan menyusut */
+            height: 100%;      /* Tinggi penuh */
+            object-fit: contain; /* Gambar/Video utuh */
+            display: block;
+            background: #000; /* Background hitam untuk video agar estetik */
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5); 
+            color: white;
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            font-size: 18px;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0; 
+            transition: opacity 0.3s, background 0.3s;
+        }
+
+        .slider-btn:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .activity-card:hover .slider-btn {
+            opacity: 1;
+        }
+
+        .prev-btn { left: 10px; }
+        .next-btn { right: 10px; }
+
+        .activity-card:hover .slider-track img {
+            transform: scale(1.05);
+            transition: transform 0.3s;
+        }
+
+        /* Ikon di dalam Modal Pop-up */
+        #modalIcon img, #modalIcon video {
+            width: 100%; 
+            max-width: 300px;
+            height: auto;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <img src="img/logo-sd.png" alt="Logo SDN Turi 2" style="height: 50px; width: auto;">
+                    <h1 style="margin: 0; font-size: 1.5rem; line-height: 1;">SDN Turi 2 Blitar</h1>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Profil</a>
+                        <div class="dropdown-content">
+                            <a href="profil.html">Profil Sekolah</a>
+                            <a href="tentang.html">Tentang Kami</a>
+                            <a href="tenaga-kependidikan.html">Guru & Staf</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Fasilitas</a>
+                        <div class="dropdown-content">
+                            <a href="prasarana.html">Prasarana</a>
+                            <a href="perpustakaan.html">Perpustakaan</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Informasi</a>
+                        <div class="dropdown-content">
+                            <a href="galeri.html">Galeri</a>
+                            <a href="kegiatan.html">Kegiatan</a>
+                            <a href="syarat-ppdb.html">PPDB</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Kontak</a>
+                        <div class="dropdown-content">
+                            <a href="kontak.html">Hubungi Kami</a>
+                            <a href="alamat.html">Alamat</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h2>Kegiatan Sekolah</h2>
+        <p>Ekstrakurikuler dan Pembelajaran</p>
+    </section>
+
+    <section class="activities">
+        <div class="container">
+            <h2 class="section-title">Ekstrakurikuler</h2>
+            <div class="activity-grid">
+                
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <div class="slider-track">
+                            <img src="img/rebana.jpeg" alt="Rebana 1">
+                            
+                            <img src="img/Rebana1.jpeg" alt="Rebana 3">
+                            
+                            <img src="img/rebana3.jpeg" alt="Rebana 3"> 
+                        </div>
+                        <button class="slider-btn prev-btn">&#10094;</button>
+                        <button class="slider-btn next-btn">&#10095;</button>
+                    </div>
+                    <h4>Sholawat/Rebana</h4>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <div class="slider-track">
+                            <img src="img/angklung.jpg" alt="Musik">
+                            <img src="img/angklung2.jpg" alt="Musik">
+                            <img src="img/ruanganseni1.jpg" alt="Musik">
+                           
+                        </div>
+                        <button class="slider-btn prev-btn">&#10094;</button>
+                        <button class="slider-btn next-btn">&#10095;</button>
+                    </div>
+                    <h4>Seni Musik</h4>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <div class="slider-track">
+                            <img src="img/seni-lukis.jpg" alt="Seni Lukis">
+                            
+                            <img src="img/lukis1.jpeg" alt="Tari 2">
+                        </div>
+                         <button class="slider-btn prev-btn">&#10094;</button>
+                         <button class="slider-btn next-btn">&#10095;</button>
+                    </div>
+                    <h4>Seni Lukis</h4>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <div class="slider-track">
+                            
+                            <img src="img/Tari.jpeg" alt="Tari">
+                            
+                        </div>
+                        <button class="slider-btn prev-btn">&#10094;</button>
+                        <button class="slider-btn next-btn">&#10095;</button>
+                    </div>
+                    <h4>Tari</h4>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <div class="slider-track">
+                            <img src="img/karawitan.jpeg" alt="Karawitan">
+                            <img src="img/ruanganseni1.jpg" alt="Musik">
+                        </div>
+                        <button class="slider-btn prev-btn">&#10094;</button>
+                        <button class="slider-btn next-btn">&#10095;</button>
+                    </div>
+                    <h4>Karawitan</h4>
+                </div>
+
+                
+                
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <div class="slider-track">
+                            <img src="img/pramuka1.jpg" alt="Pramuka">
+                            <img src="img/pramuka2.jpeg" alt="Pramuka 2">
+                            <video controls>
+                                <source src="img/pramuka.mp4" type="video/mp4">
+                                Browser Anda tidak mendukung tag video.
+                            </video>
+                        </div>
+                        <button class="slider-btn prev-btn">&#10094;</button>
+                        <button class="slider-btn next-btn">&#10095;</button>
+                    </div>
+                    <h4>Pramuka</h4>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+    const cards = document.querySelectorAll('.activity-card');
+
+    // ==========================================
+    // 1. LOGIKA SLIDER
+    // ==========================================
+    cards.forEach(card => {
+        const track = card.querySelector('.slider-track');
+        if (!track) return;
+
+        const slides = track.querySelectorAll('img, video'); 
+        const nextBtn = card.querySelector('.next-btn');
+        const prevBtn = card.querySelector('.prev-btn');
+        let currentIndex = 0;
+
+        if (slides.length <= 1) {
+            if(nextBtn) nextBtn.style.display = 'none';
+            if(prevBtn) prevBtn.style.display = 'none';
+        } else {
+            nextBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                pauseAllVideos(track);
+                currentIndex = (currentIndex + 1) % slides.length;
+                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            });
+
+            prevBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                pauseAllVideos(track);
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            });
+        }
+
+        function pauseAllVideos(container) {
+            const videos = container.querySelectorAll('video');
+            videos.forEach(vid => vid.pause());
+        }
+    });
+
+    // ==========================================
+    // 2. MODAL POP-UP (FIXED)
+    // ==========================================
+    const modalOverlay = document.createElement('div');
+    Object.assign(modalOverlay.style, {
+        position: 'fixed', top: '0', left: '0', width: '100%', height: '100%',
+        background: 'rgba(0,0,0,0.8)', zIndex: '2000', display: 'none',
+        justifyContent: 'center', alignItems: 'center', backdropFilter: 'blur(5px)'
+    });
+
+    const modalContent = document.createElement('div');
+    Object.assign(modalContent.style, {
+        background: 'white', padding: '30px', borderRadius: '15px',
+        maxWidth: '500px', width: '90%', textAlign: 'center', position: 'relative',
+        boxShadow: '0 10px 25px rgba(0,0,0,0.2)'
+    });
+
+    modalContent.innerHTML = `
+        <span id="closeModal" style="position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: #888;">&times;</span>
+        <div id="modalIcon" style="margin-bottom: 15px; display: flex; justify-content: center;"></div>
+        <h3 id="modalTitle" style="color: #667eea; margin-bottom: 10px; font-size: 1.8rem;"></h3>
+        <p id="modalDesc" style="color: #555; margin-bottom: 20px; line-height: 1.6;"></p>
+        <div style="background: #f4f7f6; padding: 15px; border-radius: 10px; border-left: 5px solid #667eea; text-align: left;">
+            <strong>📅 Jadwal Latihan:</strong><br>
+            <span id="modalSchedule">Setiap Sabtu, 15.00 WIB</span><br>
+            <span style="font-size: 0.85rem; color: #777;">Tempat: Area Sekolah</span>
+        </div>
+        <button id="btnTutupModal" style="margin-top: 20px; background: #667eea; color: white; border: none; padding: 10px 30px; border-radius: 20px; cursor: pointer;">Tutup</button>
+    `;
+
+    modalOverlay.appendChild(modalContent);
+    document.body.appendChild(modalOverlay);
+
+    cards.forEach(card => {
+        card.addEventListener('click', (e) => {
+            // Jangan buka modal jika klik tombol navigasi atau video
+            if (e.target.classList.contains('slider-btn') || e.target.tagName === 'VIDEO') return;
+
+            const title = card.querySelector('h4').innerText;
+            const firstImg = card.querySelector('.slider-track img');
+            
+            // Set Gambar di Modal
+            const modalIconContainer = document.getElementById('modalIcon');
+            modalIconContainer.innerHTML = '';
+            if (firstImg) {
+                const imgClone = firstImg.cloneNode(true);
+                imgClone.style.maxWidth = "100%";
+                imgClone.style.height = "auto";
+                imgClone.style.borderRadius = "10px";
+                modalIconContainer.appendChild(imgClone);
+            }
+
+            // Atur Jadwal & Deskripsi
+            let schedule = "Setiap Sabtu, 15.00 WIB";
+            let desc = "Kegiatan ini bertujuan untuk melatih bakat dan minat siswa.";
+
+            const t = title.toLowerCase();
+            if(t.includes('sholawat') || t.includes('rebana')) { 
+                schedule = "Jumat, 13.00 WIB"; 
+                desc = "Latihan seni musik Islami dan pembacaan sholawat."; 
+            } else if(t.includes('musik')) { 
+                schedule = "Rabu, 14.00 WIB"; 
+                desc = "Eksplorasi alat musik tradisional dan modern."; 
+            } else if(t.includes('pramuka')) { 
+                schedule = "Sabtu, 10.00 WIB"; 
+                desc = "Kegiatan kepanduan untuk membentuk karakter disiplin."; 
+            } else if(t.includes('lukis')) { 
+                schedule = "Selasa, 14.00 WIB"; 
+                desc = "Mengasah kreativitas melalui seni lukis dan gambar."; 
+            } else if(t.includes('tari')) { 
+                schedule = "Kamis, 13.30 WIB"; 
+                desc = "Melestarikan budaya melalui gerak tari tradisional."; 
+            } else if(t.includes('karawitan')) { 
+                schedule = "Senin, 14.00 WIB"; 
+                desc = "Latihan memainkan alat musik gamelan Jawa."; 
+            }
+
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDesc').innerText = desc;
+            document.getElementById('modalSchedule').innerText = schedule;
+            modalOverlay.style.display = 'flex';
+        });
+    });
+
+    // Tutup Modal
+    document.getElementById('closeModal').onclick = () => modalOverlay.style.display = 'none';
+    document.getElementById('btnTutupModal').onclick = () => modalOverlay.style.display = 'none';
+    window.onclick = (e) => { if(e.target === modalOverlay) modalOverlay.style.display = 'none'; };
+
+    // ==========================================
+    // 3. ANIMASI HEADER & SCROLL
+    // ==========================================
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.style.background = "rgba(255, 255, 255, 0.95)";
+            header.style.boxShadow = "0 4px 30px rgba(0, 0, 0, 0.1)";
+        } else {
+            header.style.background = "#ffffff";
+            header.style.boxShadow = "0 2px 10px rgba(0,0,0,0.1)";
+        }
+    });
+
+    // Animasi Muncul Card
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+            }
+        });
+    });
+
+    cards.forEach((el, index) => {
+        el.style.opacity = "0";
+        el.style.transform = "translateY(50px)";
+        el.style.transition = `all 0.5s ease-out ${index * 0.1}s`; 
+        observer.observe(el);
+    });
+});
+    </script>
+    <footer>
+         <p>&copy; 2026 SDN Turi 2 Blitar.</p>
+        <p>Kec. Sukorejo, Kota Blitar, Jawa Timur</p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
+

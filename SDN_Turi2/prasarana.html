@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prasarana - SDN Turi 2 Blitar</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .facility-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .facility-card {
+            background: #fff;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .facility-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .facility-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .facility-content {
+            padding: 16px;
+        }
+
+        .facility-content h3 {
+            margin-bottom: 8px;
+            color: #28334a;
+        }
+
+        .facility-content p {
+            color: #5c6573;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <img src="img/logo-sd.png" alt="Logo SDN Turi 2" style="height: 50px; width: auto;">
+                    <h1 style="margin: 0; font-size: 1.5rem; line-height: 1;">SDN Turi 2 Blitar</h1>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Profil</a>
+                        <div class="dropdown-content">
+                            <a href="profil.html">Profil Sekolah</a>
+                            <a href="tentang.html">Tentang Kami</a>
+                            <a href="tenaga-kependidikan.html">Guru & Staf</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Fasilitas</a>
+                        <div class="dropdown-content">
+                            <a href="prasarana.html">Prasarana</a>
+                            <a href="perpustakaan.html">Perpustakaan</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Informasi</a>
+                        <div class="dropdown-content">
+                            <a href="galeri.html">Galeri</a>
+                            <a href="kegiatan.html">Kegiatan</a>
+                            <a href="syarat-ppdb.html">PPDB</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Kontak</a>
+                        <div class="dropdown-content">
+                            <a href="kontak.html">Hubungi Kami</a>
+                            <a href="alamat.html">Alamat</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h2>Sarana dan Prasarana</h2>
+        <p>Fasilitas pendukung pembelajaran di SDN Turi 2</p>
+    </section>
+
+    <section class="container">
+        <h2 class="section-title">Fasilitas Sekolah</h2>
+        <div class="facility-grid">
+            <article class="facility-card">
+                <img src="img/RuangKelas5.jpeg" alt="Ruang kelas">
+                <div class="facility-content">
+                    <h3>Ruang Kelas</h3>
+                    <p>Kelas nyaman, terang, dan mendukung proses belajar aktif setiap hari.</p>
+                </div>
+            </article>
+            <article class="facility-card">
+                <img src="img/PerpusDalam_1.jpeg" alt="Perpustakaan">
+                <div class="facility-content">
+                    <h3>Perpustakaan</h3>
+                    <p>Koleksi buku pelajaran dan bacaan umum untuk meningkatkan literasi siswa.</p>
+                </div>
+            </article>
+            <article class="facility-card">
+                <img src="img/LAB.jpeg" alt="Laboratorium komputer">
+                <div class="facility-content">
+                    <h3>Laboratorium </h3>
+                    <p>Berisi berbagai peralatan pendukung pembelajaran di bidang sains dan teknologi.</p>
+                </div>
+            </article>
+            <article class="facility-card">
+                <img src="img/MusholaDalam.jpeg" alt="Mushola">
+                <div class="facility-content">
+                    <h3>Mushola</h3>
+                    <p>Area ibadah yang bersih dan nyaman untuk warga sekolah.</p>
+                </div>
+            </article>
+            <article class="facility-card">
+                <img src="img/UKS.jpeg" alt="Ruang UKS">
+                <div class="facility-content">
+                    <h3>Ruang UKS</h3>
+                    <p>Fasilitas kesehatan dasar untuk layanan pertolongan pertama siswa.</p>
+                </div>
+            </article>
+            <article class="facility-card">
+                <img src="img/Kantin.jpeg" alt="Kantin sehat">
+                <div class="facility-content">
+                    <h3>Kantin Sehat</h3>
+                    <p>Menyediakan jajanan yang higienis dengan pengawasan sekolah.</p>
+                </div>
+            </article>
+            <article class="facility-card">
+                <img src="img/AulaDalam_1.jpeg" alt="Aula Serbaguna">
+                <div class="facility-content">
+                    <h3>Aula Serbaguna</h3>
+                    <p>Fasilitas untuk kegiatan kebersamaan dan acara sekolah.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <footer>
+         <p>&copy; 2026 SDN Turi 2 Blitar.</p>
+        <p>Kec. Sukorejo, Kota Blitar, Jawa Timur</p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
+

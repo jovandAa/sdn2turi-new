@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perpustakaan - SDN Turi 2</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <img src="img/logo-sd.png" alt="Logo SDN Turi 2" style="height: 50px; width: auto;">
+                    <h1 style="margin: 0; font-size: 1.5rem; line-height: 1;">SDN Turi 2 Blitar</h1>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Profil</a>
+                        <div class="dropdown-content">
+                            <a href="profil.html">Profil Sekolah</a>
+                            <a href="tentang.html">Tentang Kami</a>
+                            <a href="tenaga-kependidikan.html">Guru & Staf</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Fasilitas</a>
+                        <div class="dropdown-content">
+                            <a href="prasarana.html">Prasarana</a>
+                            <a href="perpustakaan.html">Perpustakaan</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Informasi</a>
+                        <div class="dropdown-content">
+                            <a href="galeri.html">Galeri</a>
+                            <a href="kegiatan.html">Kegiatan</a>
+                            <a href="syarat-ppdb.html">PPDB</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Kontak</a>
+                        <div class="dropdown-content">
+                            <a href="kontak.html">Hubungi Kami</a>
+                            <a href="alamat.html">Alamat</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h2>Perpustakaan Sekolah</h2>
+        <p>Jendela Ilmu Pengetahuan</p>
+    </section>
+
+    <section class="container">
+        <h2 class="section-title">Fasilitas & Layanan</h2>
+        <div class="features">
+            <div class="feature-card"><div class="feature-icon">📚</div><h3>Koleksi Lengkap</h3></div>
+            <div class="feature-card"><div class="feature-icon">🪑</div><h3>Ruang Nyaman</h3></div>
+            <div class="feature-card"><div class="feature-icon">⏰</div><h3>Buka Senin-Sabtu</h3></div>
+            
+        </div>
+    </section>
+
+    <footer>
+         <p>&copy; 2026 SDN Turi 2 Blitar.</p>
+        <p>Kec. Sukorejo, Kota Blitar, Jawa Timur</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // ==========================================
+            // 1. STATUS JAM BUKA (OTOMATIS)
+            // ==========================================
+            const now = new Date();
+            const hour = now.getHours();
+            const day = now.getDay(); 
+            // Buka Senin-Sabtu (1-6), jam 07:00 sampai 14:00
+            let isOpen = (day !== 0 && hour >= 7 && hour < 14); 
+            
+            const cardJam = document.querySelectorAll('.feature-card')[2]; 
+            if(cardJam) {
+                const statusDiv = document.createElement('div');
+                statusDiv.innerHTML = isOpen 
+                    ? `<span style="color: #2ecc71; font-weight: bold; font-size: 1.2rem; border: 2px solid #2ecc71; padding: 5px 15px; border-radius: 20px; display:inline-block; margin-top:10px;">🟢 SEDANG BUKA</span>`
+                    : `<span style="color: #e74c3c; font-weight: bold; font-size: 1.2rem; border: 2px solid #e74c3c; padding: 5px 15px; border-radius: 20px; display:inline-block; margin-top:10px;">🔴 TUTUP</span>`;
+                cardJam.appendChild(statusDiv);
+            }
+
+            // ==========================================
+            // 2. RAK BUKU POPULER
+            // ==========================================
+            const container = document.querySelector('.container');
+            const newSection = document.createElement('div');
+            newSection.style.marginTop = "60px";
+            newSection.innerHTML = `
+                <h2 class="section-title">Buku Terpopuler Bulan Ini</h2>
+                <div style="display: flex; gap: 20px; overflow-x: auto; padding-bottom: 20px; justify-content: center; flex-wrap: wrap;">
+                    <div class="book-cover" style="width: 150px; background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%); border-radius: 5px; padding: 20px 10px; text-align: center; box-shadow: 5px 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s; cursor: default;">
+                        <div style="font-size: 3rem; margin-bottom: 10px;">📖</div>
+                        <h4 style="font-size: 0.9rem; color: #333; margin-bottom: 5px;">Cerita Rakyat</h4>
+                    </div>
+                    <div class="book-cover" style="width: 150px; background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%); border-radius: 5px; padding: 20px 10px; text-align: center; box-shadow: 5px 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s; cursor: default;">
+                        <div style="font-size: 3rem; margin-bottom: 10px;">🌍</div>
+                        <h4 style="font-size: 0.9rem; color: #333; margin-bottom: 5px;">Atlas Dunia</h4>
+                    </div>
+                    <div class="book-cover" style="width: 150px; background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%); border-radius: 5px; padding: 20px 10px; text-align: center; box-shadow: 5px 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s; cursor: default;">
+                        <div style="font-size: 3rem; margin-bottom: 10px;">🔬</div>
+                        <h4 style="font-size: 0.9rem; color: #333; margin-bottom: 5px;">Sains Kuark</h4>
+                    </div>
+                </div>
+            `;
+            container.appendChild(newSection);
+
+            document.querySelectorAll('.book-cover').forEach(b => {
+                b.addEventListener('mouseover', () => b.style.transform = "translateY(-10px)");
+                b.addEventListener('mouseout', () => b.style.transform = "translateY(0)");
+            });
+
+            // ==========================================
+            // 3. ANIMASI & NAVIGASI AKTIF
+            // ==========================================
+            const header = document.querySelector('header');
+            document.querySelectorAll('nav ul li a').forEach(link => {
+                if(link.href.includes('perpustakaan.html')) {
+                    link.style.color = "#667eea";
+                    link.style.borderBottom = "2px solid #667eea";
+                }
+            });
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.style.background = "rgba(255, 255, 255, 0.95)";
+                    header.style.boxShadow = "0 4px 30px rgba(0, 0, 0, 0.1)";
+                    header.style.backdropFilter = "blur(5px)";
+                } else {
+                    header.style.background = "#ffffff";
+                    header.style.boxShadow = "0 2px 10px rgba(0,0,0,0.1)";
+                }
+            });
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = "1";
+                        entry.target.style.transform = "translateY(0)";
+                    }
+                });
+            });
+
+            document.querySelectorAll('.feature-card, h2').forEach(el => {
+                el.style.opacity = "0";
+                el.style.transform = "translateY(30px)";
+                el.style.transition = "all 0.6s ease-out";
+                observer.observe(el);
+            });
+        });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>

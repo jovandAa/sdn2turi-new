@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Sekolah - SDN Turi 2 Blitar</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .profile-layout {
+            display: grid;
+            grid-template-columns: 1.7fr 1fr;
+            gap: 24px;
+        }
+
+        .profile-card {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+            padding: 24px;
+        }
+
+        .profile-card p {
+            color: #4f5b6d;
+            margin-bottom: 14px;
+        }
+
+        .identity-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .identity-table td {
+            border-bottom: 1px solid #eceff4;
+            padding: 12px 6px;
+            vertical-align: top;
+        }
+
+        .identity-table td:first-child {
+            width: 38%;
+            font-weight: 700;
+            color: #2a3448;
+        }
+
+        .profile-photo {
+            width: 100%;
+            max-width: 280px;
+            border-radius: 12px;
+            display: block;
+            margin: 0 auto 16px;
+        }
+
+        @media (max-width: 768px) {
+            .profile-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .identity-table,
+            .identity-table tbody,
+            .identity-table tr,
+            .identity-table td {
+                display: block;
+                width: 100%;
+            }
+
+            .identity-table td:first-child {
+                width: 100%;
+                padding-bottom: 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <img src="img/logo-sd.png" alt="Logo SDN Turi 2" style="height: 50px; width: auto;">
+                    <h1 style="margin: 0; font-size: 1.5rem; line-height: 1;">SDN Turi 2 Blitar</h1>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Profil</a>
+                        <div class="dropdown-content">
+                            <a href="profil.html">Profil Sekolah</a>
+                            <a href="tentang.html">Tentang Kami</a>
+                            <a href="tenaga-kependidikan.html">Guru & Staf</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Fasilitas</a>
+                        <div class="dropdown-content">
+                            <a href="prasarana.html">Prasarana</a>
+                            <a href="perpustakaan.html">Perpustakaan</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Informasi</a>
+                        <div class="dropdown-content">
+                            <a href="galeri.html">Galeri</a>
+                            <a href="kegiatan.html">Kegiatan</a>
+                            <a href="syarat-ppdb.html">PPDB</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Kontak</a>
+                        <div class="dropdown-content">
+                            <a href="kontak.html">Hubungi Kami</a>
+                            <a href="alamat.html">Alamat</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h2>Tentang SDN Turi 2</h2>
+        <p>Informasi umum UPT Satuan Pendidikan SDN Turi 2</p>
+    </section>
+
+    <section class="container">
+        <div class="profile-layout">
+            <article class="profile-card">
+                <h3 style="margin-bottom: 14px; color: #2a3448;">Gambaran Umum</h3>
+                <p>UPT Satuan Pendidikan SDN Turi 2 adalah sekolah dasar negeri di Kecamatan Sukorejo, Kota Blitar. Sekolah ini berkomitmen membangun peserta didik yang cerdas, berkarakter, dan berdaya saing.</p>
+                <p>Pembelajaran dilaksanakan dengan pendekatan aktif, kreatif, dan menyenangkan melalui dukungan guru profesional serta sarana belajar yang memadai.</p>
+                <p>Selain akademik, sekolah juga mengembangkan potensi siswa melalui berbagai kegiatan ekstrakurikuler dan pembinaan karakter.</p>
+            </article>
+
+            <aside class="profile-card" style="text-align: center;">
+                <img src="img/ASY'ARI.jpg" alt="Kepala Sekolah" class="profile-photo">
+                <h3 style="margin-bottom: 6px;">ASY'ARI, S.Pd.SD</h3>
+                <p style="margin: 0; color: #667eea; font-weight: 700;">Kepala Sekolah</p>
+            </aside>
+        </div>
+
+        <h2 class="section-title" style="margin-top: 40px;">Identitas Lembaga</h2>
+        <div class="profile-card">
+            <table class="identity-table">
+                <tr><td>Nama Sekolah</td><td>UPT Satuan Pendidikan SDN Turi 2</td></tr>
+                <tr><td>Status</td><td>Negeri</td></tr>
+                <tr><td>Jenjang</td><td>Sekolah Dasar (SD)</td></tr>
+                <tr><td>Akreditasi</td><td>A</td></tr>
+                <tr><td>Kurikulum</td><td>Kurikulum Merdeka</td></tr>
+                <tr><td>Alamat</td><td>Jl. Turi, Kecamatan Sukorejo, Kota Blitar, Jawa Timur</td></tr>
+            </table>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 SDN Turi 2 Blitar.</p>
+        <p>Kec. Sukorejo, Kota Blitar, Jawa Timur</p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>j
+</html>
+

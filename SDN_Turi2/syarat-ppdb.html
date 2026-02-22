@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syarat PPDB - SDN Turi 2 Blitar</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .ppdb-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .ppdb-card {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+            padding: 24px;
+        }
+
+        .ppdb-card h3 {
+            margin-bottom: 16px;
+            color: #2d3b55;
+        }
+
+        .check-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .check-list li {
+            display: grid;
+            grid-template-columns: 30px 1fr;
+            gap: 10px;
+            padding: 10px 0;
+            border-bottom: 1px dashed #e3e8f0;
+            color: #4f5b6d;
+        }
+
+        .check-list li:last-child {
+            border-bottom: none;
+        }
+
+        .check-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #e8f8ef;
+            color: #20a55a;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .timeline-item {
+            border-left: 3px solid #cfd8ea;
+            padding: 0 0 18px 16px;
+            margin-left: 8px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #667eea;
+            left: -8px;
+            top: 4px;
+        }
+
+        .timeline-item h4 {
+            margin-bottom: 4px;
+            color: #2d3b55;
+        }
+
+        .timeline-item p {
+            color: #5f6b7b;
+            font-size: 0.95rem;
+        }
+
+        .cta-box {
+            margin-top: 28px;
+            background: #fff;
+            border: 2px dashed #889be7;
+            border-radius: 14px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .cta-box a {
+            display: inline-block;
+            margin: 6px;
+            padding: 10px 18px;
+            border-radius: 999px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .btn-primary {
+            background: #667eea;
+        }
+
+        .btn-whatsapp {
+            background: #24c464;
+        }
+
+        @media (max-width: 768px) {
+            .ppdb-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <img src="img/logo-sd.png" alt="Logo SDN Turi 2" style="height: 50px; width: auto;">
+                    <h1 style="margin: 0; font-size: 1.5rem; line-height: 1;">SDN Turi 2 Blitar</h1>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Profil</a>
+                        <div class="dropdown-content">
+                            <a href="profil.html">Profil Sekolah</a>
+                            <a href="tentang.html">Tentang Kami</a>
+                            <a href="tenaga-kependidikan.html">Guru & Staf</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Fasilitas</a>
+                        <div class="dropdown-content">
+                            <a href="prasarana.html">Prasarana</a>
+                            <a href="perpustakaan.html">Perpustakaan</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Informasi</a>
+                        <div class="dropdown-content">
+                            <a href="galeri.html">Galeri</a>
+                            <a href="kegiatan.html">Kegiatan</a>
+                            <a href="syarat-ppdb.html">PPDB</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Kontak</a>
+                        <div class="dropdown-content">
+                            <a href="kontak.html">Hubungi Kami</a>
+                            <a href="alamat.html">Alamat</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h2>Informasi PPDB</h2>
+        <p>Penerimaan Peserta Didik Baru Tahun Ajaran 2026/2027</p>
+    </section>
+
+    <section class="container">
+        <div class="ppdb-layout">
+            <article class="ppdb-card">
+                <h3>Syarat Pendaftaran</h3>
+                <ul class="check-list">
+                    <li><span class="check-icon">✓</span><span>Usia minimal 6 tahun per 1 Juli 2026.</span></li>
+                    <li><span class="check-icon">✓</span><span>Fotokopi Akta Kelahiran (2 lembar).</span></li>
+                    <li><span class="check-icon">✓</span><span>Fotokopi Kartu Keluarga (2 lembar).</span></li>
+                    <li><span class="check-icon">✓</span><span>Fotokopi KTP orang tua/wali.</span></li>
+                    <li><span class="check-icon">✓</span><span>Pas foto 3x4 sebanyak 2 lembar.</span></li>
+                    <li><span class="check-icon">✓</span><span>Mengisi formulir pendaftaran dari sekolah.</span></li>
+                </ul>
+            </article>
+
+            <article class="ppdb-card">
+                <h3>Alur Pendaftaran</h3>
+                <div class="timeline-item">
+                    <h4>1. Ambil Formulir</h4>
+                    <p>Pengambilan berkas pendaftaran di kantor sekolah.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>2. Serahkan Berkas</h4>
+                    <p>Panitia melakukan verifikasi dokumen calon peserta didik.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>3. Seleksi Administrasi</h4>
+                    <p>Data calon siswa diproses sesuai ketentuan zonasi dan kuota.</p>
+                </div>
+                <div class="timeline-item" style="padding-bottom: 0;">
+                    <h4>4. Pengumuman</h4>
+                    <p>Hasil diterbitkan melalui papan pengumuman dan kontak resmi sekolah.</p>
+                </div>
+            </article>
+        </div>
+
+        <div class="cta-box">
+            <h3 style="margin-bottom: 10px;">Butuh Bantuan Informasi PPDB?</h3>
+          
+            <a href="kontak.html" class="btn-primary">Lihat Kontak Sekolah</a>
+           
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 SDN Turi 2 Blitar.</p>
+        <p>Kec. Sukorejo, Kota Blitar, Jawa Timur</p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

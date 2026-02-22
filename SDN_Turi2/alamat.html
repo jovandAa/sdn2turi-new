@@ -1,0 +1,237 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alamat & Kontak - SDN Turi 2</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* =========================================
+           TAMBAHAN PERBAIKAN TATA LETAK MOBILE (MAPS DI ATAS)
+           ========================================= */
+        
+        /* 1. Definisi Grid untuk Desktop (Normal) */
+        .features.alamat-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr; 
+            gap: 40px; 
+            text-align: left;
+        }
+
+        /* 2. Pengaturan Khusus Mobile (Layar Kecil) */
+        @media screen and (max-width: 768px) {
+            .features.alamat-grid {
+                display: flex;       /* Ubah grid jadi flexbox */
+                flex-direction: column; /* Tumpuk ke bawah */
+                gap: 20px;
+            }
+
+            /* Paksa Peta (Maps) naik ke urutan pertama */
+            .map-container-mobile {
+                order: 1; 
+                height: 350px !important; /* Tinggi peta di HP */
+            }
+
+            /* Paksa Alamat turun ke urutan kedua */
+            .address-card-mobile {
+                order: 2;
+                padding: 25px !important; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <img src="img/logo-sd.png" alt="Logo SDN Turi 2" style="height: 50px; width: auto;">
+                    <h1 style="margin: 0; font-size: 1.5rem; line-height: 1;">SDN Turi 2 Blitar</h1>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Profil</a>
+                        <div class="dropdown-content">
+                            <a href="profil.html">Profil Sekolah</a>
+                            <a href="tentang.html">Tentang Kami</a>
+                            <a href="tenaga-kependidikan.html">Guru & Staf</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Fasilitas</a>
+                        <div class="dropdown-content">
+                            <a href="prasarana.html">Prasarana</a>
+                            <a href="perpustakaan.html">Perpustakaan</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Informasi</a>
+                        <div class="dropdown-content">
+                            <a href="galeri.html">Galeri</a>
+                            <a href="kegiatan.html">Kegiatan</a>
+                            <a href="syarat-ppdb.html">PPDB</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Kontak</a>
+                        <div class="dropdown-content">
+                            <a href="kontak.html">Hubungi Kami</a>
+                            <a href="alamat.html">Alamat</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h2>Lokasi & Kontak</h2>
+        <p>Kunjungi kami di Kecamatan Sukorejo, Kota Blitar</p>
+    </section>
+
+    <section class="container">
+        
+        <div class="features alamat-grid">
+            
+            <div class="feature-card address-card-mobile" style="text-align: left; padding: 40px;">
+                <h3 style="color: #667eea; margin-bottom: 20px; font-size: 1.5rem;">📍 Alamat Sekolah</h3>
+                <p style="font-weight: bold; font-size: 1.1rem; margin-bottom: 10px;">
+                    UPT Satuan Pendidikan SDN Turi 2
+                </p>
+                <p style="line-height: 1.8; color: #555; margin-bottom: 30px;">
+                    Jl. Turi, Kelurahan Turi,<br>
+                    Kecamatan Sukorejo,<br>
+                    Kota Blitar, Jawa Timur.<br>
+                    Kode Pos: 66121
+                </p>
+
+                <h3 style="color: #667eea; margin-bottom: 20px; font-size: 1.5rem;">📞 Hubungi Kami</h3>
+                <div style="margin-bottom: 15px;">
+                    <strong>Email:</strong><br>
+                    <a href="mailto:sdnturi2@gmail.com" style="color: #764ba2;">sdnturi2@gmail.com</a>
+                </div>
+                <div>
+                    <strong>Jam Operasional TU:</strong><br>
+                    <span style="color: #555;">Senin - Sabtu: 07.00 - 13.00 WIB</span>
+                </div>
+            </div>
+
+            <div class="map-container-mobile" style="background: white; padding: 10px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); height: 400px; position: relative;">
+                <iframe 
+                    width="100%" 
+                    height="100%" 
+                    frameborder="0" 
+                    style="border:0; border-radius: 10px;" 
+                    src="https://www.google.com/maps?q=SDN+Turi+2+Blitar&output=embed" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+         <p>&copy; 2026 SDN Turi 2 Blitar. </p>
+        <p>Kec. Sukorejo, Kota Blitar, Jawa Timur</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // 1. WIDGET CUACA
+            const hero = document.querySelector('.hero');
+            const weatherWidget = document.createElement('div');
+            const date = new Date();
+            const dateString = date.toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+
+            Object.assign(weatherWidget.style, {
+                background: 'white', maxWidth: '400px', margin: '-30px auto 30px auto',
+                padding: '15px 25px', borderRadius: '50px', boxShadow: '0 10px 25px rgba(0,0,0,0.1)',
+                display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px',
+                position: 'relative', zIndex: '10'
+            });
+
+            weatherWidget.innerHTML = `
+                <div style="font-size: 2.5rem;">🌤️</div>
+                <div style="text-align: left;">
+                    <div style="font-size: 0.8rem; color: #888;">${dateString}</div>
+                    <div style="font-weight: bold; color: #333;">Cuaca Sukorejo, Blitar</div>
+                    <div style="color: #667eea; font-weight: bold;">Cerah Berawan • 29°C</div>
+                </div>
+            `;
+            hero.parentNode.insertBefore(weatherWidget, hero.nextSibling);
+
+            // 2. DETEKTOR JAM KERJA
+            const operationalDiv = document.querySelector('.address-card-mobile div:last-child');
+            if(operationalDiv) {
+                const now = new Date();
+                const hour = now.getHours();
+                const day = now.getDay();
+                const isOpen = (day !== 0 && hour >= 7 && hour < 13);
+                const statusBadge = document.createElement('div');
+                statusBadge.innerHTML = isOpen 
+                    ? `<span style="display:inline-block; margin-top:10px; background:#e8f5e9; color:#2ecc71; padding:5px 15px; border-radius:20px; font-weight:bold; font-size:0.9rem;">🟢 TU Buka Sekarang</span>`
+                    : `<span style="display:inline-block; margin-top:10px; background:#ffebee; color:#e74c3c; padding:5px 15px; border-radius:20px; font-weight:bold; font-size:0.9rem;">🔴 TU Sedang Tutup</span>`;
+                operationalDiv.appendChild(statusBadge);
+            }
+
+            // 3. TOMBOL NAVIGASI GPS
+            const mapContainer = document.querySelector('.map-container-mobile');
+            const gpsBtn = document.createElement('a');
+            gpsBtn.href = "https://www.google.com/maps/search/?api=1&query=SDN+Turi+2+Blitar"; 
+            gpsBtn.target = "_blank";
+            gpsBtn.innerHTML = "📍 Buka Rute Google Maps";
+            Object.assign(gpsBtn.style, {
+                position: 'absolute', bottom: '20px', left: '50%', transform: 'translateX(-50%)',
+                background: 'white', color: '#333', padding: '10px 25px', borderRadius: '30px',
+                fontWeight: 'bold', textDecoration: 'none', boxShadow: '0 5px 15px rgba(0,0,0,0.2)',
+                zIndex: '5', display: 'flex', alignItems: 'center', gap: '8px', whiteSpace: 'nowrap'
+            });
+            mapContainer.appendChild(gpsBtn);
+
+            // 4. HEADER & SCROLL
+            const header = document.querySelector('header');
+            document.querySelectorAll('nav ul li a').forEach(link => {
+                if(link.href.includes('alamat.html')) {
+                    link.style.color = "#667eea";
+                    link.style.borderBottom = "2px solid #667eea";
+                }
+            });
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.style.background = "rgba(255, 255, 255, 0.95)";
+                    header.style.boxShadow = "0 4px 30px rgba(0, 0, 0, 0.1)";
+                    header.style.backdropFilter = "blur(5px)";
+                } else {
+                    header.style.background = "#ffffff";
+                    header.style.boxShadow = "0 2px 10px rgba(0,0,0,0.1)";
+                }
+            });
+
+            // 5. ANIMASI SCROLL
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = "1";
+                        entry.target.style.transform = "translateY(0)";
+                    }
+                });
+            });
+
+            const animatedElements = document.querySelectorAll('.feature-card, h2, iframe');
+            animatedElements.forEach((el, index) => {
+                el.style.opacity = "0";
+                el.style.transform = "translateY(40px)";
+                el.style.transition = `all 0.6s ease-out ${index * 0.1}s`;
+                observer.observe(el);
+            });
+        });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>
